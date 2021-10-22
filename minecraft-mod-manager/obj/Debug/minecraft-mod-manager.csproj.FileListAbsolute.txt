@@ -1,0 +1,9 @@
+C:\Users\Overlord\Coding\Testing\C#\minecraft-mod-manager\minecraft-mod-manager\bin\Debug\minecraft-mod-manager.exe.config
+C:\Users\Overlord\Coding\Testing\C#\minecraft-mod-manager\minecraft-mod-manager\bin\Debug\minecraft-mod-manager.exe
+C:\Users\Overlord\Coding\Testing\C#\minecraft-mod-manager\minecraft-mod-manager\bin\Debug\minecraft-mod-manager.pdb
+C:\Users\Overlord\Coding\Testing\C#\minecraft-mod-manager\minecraft-mod-manager\bin\Debug\CommandHandler.dll
+C:\Users\Overlord\Coding\Testing\C#\minecraft-mod-manager\minecraft-mod-manager\bin\Debug\CommandHandler.pdb
+C:\Users\Overlord\Coding\Testing\C#\minecraft-mod-manager\minecraft-mod-manager\obj\Debug\minecraft-mod-manager.csproj.AssemblyReference.cache
+C:\Users\Overlord\Coding\Testing\C#\minecraft-mod-manager\minecraft-mod-manager\obj\Debug\minecraft-mod-manager.csproj.CoreCompileInputs.cache
+C:\Users\Overlord\Coding\Testing\C#\minecraft-mod-manager\minecraft-mod-manager\obj\Debug\minecraft-mod-manager.exe
+C:\Users\Overlord\Coding\Testing\C#\minecraft-mod-manager\minecraft-mod-manager\obj\Debug\minecraft-mod-manager.pdb
