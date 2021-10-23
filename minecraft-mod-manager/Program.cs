@@ -30,15 +30,53 @@ namespace minecraft_mod_manager
         {
             // make the folders and config.txt file.
 
-            /* DEFAULT CONFIG FILE:
-             
-            -----------------------------------------------------------
-            LAUNCHER_INSTALLDIR::path\to\MinecraftLauncher.exe
+            string basedir = $@"C:\Users\{Environment.UserName}\AppData\Local\modmanager";
+            string defaultconfig = "LAUNCHER_INSTALLDIR=unassigned\n\nPRELAUNCHER_DEBUG=0";
 
-            PRELAUNCHER_INSTALLDIR::path\to\Minecraft Prelauncher.exe
-            PRELAUNCHER_DEBUG_MODE::  
-            -----------------------------------------------------------
-            */
+            if (Directory.Exists(basedir))
+            {
+                Console.WriteLine(basedir + " already exists, skipping");
+
+                if (Directory.Exists(basedir + @"\mods")) Console.WriteLine(basedir + @"\mods already exists, skipping");
+                else
+                {
+                    Directory.CreateDirectory(basedir + @"\mods");
+                    Console.WriteLine(basedir + @"\mods created");
+                }
+
+                if (Directory.Exists(basedir + @"\modconfigs")) Console.WriteLine(basedir + @"\modconfigs already exists, skipping");
+                else
+                {
+                    Directory.CreateDirectory(basedir + @"\modconfigs");
+                    Console.WriteLine(basedir + @"\modconfigs created");
+
+                    if (File.Exists(basedir + @"\config.txt")) Console.WriteLine("Config file already present, skipping");
+                    else
+                    {
+                        var x = File.Create(basedir + @"\config.txt"); x.Close();
+                        File.WriteAllText(basedir + @"\config.txt", defaultconfig);
+                        Console.WriteLine("Config file not present, created default config");
+                    }
+                }
+            }
+            else
+            {
+                Directory.CreateDirectory(basedir);
+                Directory.CreateDirectory(basedir + @"\mods");
+                Directory.CreateDirectory(basedir + @"\modconfigs");
+
+                Console.WriteLine("Base directory not present, created directory structure");
+
+                var x = File.Create(basedir + @"\config.txt"); x.Close();
+                File.WriteAllText(basedir + @"\config.txt", defaultconfig);
+
+                Console.WriteLine("Default config file created...");
+            }
+
+            Console.Write("\n\nPress enter to continue...");
+            Console.ReadLine();
+            Console.Clear();
+
         }
         static void Main(string[] args)
         {
@@ -73,11 +111,15 @@ namespace minecraft_mod_manager
                         break;
 
                     case ConsoleKey.D3:
-                        // Editmode.Console()
+                        // Editmode.Init()
                         break;
 
                     case ConsoleKey.D4:
                         ChangeDirectory();
+                        break;
+
+                    case ConsoleKey.F2:
+                        IntegrityCheck();
                         break;
 
                     default:

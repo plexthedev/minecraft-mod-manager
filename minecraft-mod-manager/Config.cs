@@ -34,11 +34,12 @@ namespace minecraft_mod_manager
                         else if (splitVariable[1].ToLower() == "false")
                             PRELAUNCHER_DEBUG = false;
                     }
-
-
-
                 }
             }
+
+            Console.WriteLine(LAUNCHER_INSTALLDIR);
+            Console.WriteLine(PRELAUNCHER_DEBUG);
+            Console.ReadLine();
         }
 
         public static void WriteFile()
